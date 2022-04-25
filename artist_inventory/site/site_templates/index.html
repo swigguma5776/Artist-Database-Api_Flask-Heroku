@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!-- Header Section -->
+<div class="hero-image">
+    <div class="hero-text">
+        <h2>Can you imagine a world with all of the great artists in one place?</h2>
+        <h5>Well we can & we've brought that world to you!</h5>
+        <div>
+            <button class="btn btn-secondary">View Our Docs</button>
+            <button class="btn btn-secondary">Manage Your App</button> 
+        </div>
+
+    </div>
+</div>
+    <!-- End of Header Section -->
+
+<!-- Flask Flashed Message to User -->
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat, msg in messages %}
+                {% if cat == 'user-created' %}
+                    <div class="alert alert-success">
+                        {{ msg }}
+                        <button type="button" class="close" data-dismiss="alert" onclick="this.parentElement.style.display='none'">&times;</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<!-- End Flashed Message -->
+
+<!-- Middle Text -->
+<section class="column">
+    <div style="text-align: center;" class="col-12" id="middle-text">
+        <h2>Experience the freedom to build a magical world filled with your favorite artists!</h2>
+        <h5>
+            You can now harness components of our platform and build<br>
+            powerful integrations for our 2 million users - or simply just for your team.
+        </h5>
+    </div>
+</section>
+
+<!-- API  Info -->
+<section class="row" id="api-info">
+    <div class="col-12 col-md-4">
+        <i class='fas fa-solid fa-palette fa-10x' id="features-icon"></i> 
+        <h4>An API made for you!</h4>
+        <p>Changes are made in real-time. Read & write your own local data instantly.</p>
+    </div>
+    <div class="col-12 col-md-4">
+        <i class='fas fa-code fa-10x' id="features-icon"></i>
+        <h4>Easier with JSON</h4>
+        <p>Developed for ease of use with the integration of JSON Encoding capabilities.</p>
+    </div>
+    <div class="col-12 col-md-4">
+        <i class='fas fa-paper-plane fa-10x' id="features-icon"></i>
+        <h4>Collaborative!</h4>
+        <p>Our system resolves conflicts automatically so you can focus on what's most important, building your artist empire.</p>
+    </div>
+</section>
+
+<!-- Bottom Text -->
+<section class="column">
+    <div class="col-12" id="middle-text">
+        <h1>Built for devs!</h1>
+    </div>
+</section>
+
+<!-- Dev Section -->
+
+<section class="row" id="dev-info">
+    <div class="col-12 col-md-4" id="dev-writing">
+        <div id="ceo">
+            <img src="../../static/images/alex.jpeg" alt="alex-ceo" id="ceo-image">
+            <h6>Alex Swiggum | Co-founder & CEO</h6>
+        </div>
+        <br><br>
+        <p>
+            "I created the Artist API Database because I had a vision of
+            easy data usage, user customized experience, and infinite collaboration
+            across the globe. We finally made it!"
+        </p>
+        <span>
+            <button class="btn btn-secondary">View on Github</button>
+            <button class="btn btn-secondary">Join our Slack Channel</button>
+        </span>
+    </div>
+    <div  id="dev-image">
+        <img src="../../static/images/1_vhBCH7FrI1qKEVToZBXdfQ.png" alt="Dev Image">               
+    </div>
+</section>
+
+<!-- Footer Start -->
+<footer class="row" id="footer">
+    <div class="footer-logo">
+        <img src="../../static/images/1-sunflowers-van-goth-david-pyatt.jpeg" alt="van gogh" id="footer-logo">
+    </div>
+    <div class="col-2 col-md-2">
+        <div class="footer-text-flex">
+            <h4>Platform</h4>
+            <p>Why Alto?</p>
+            <p>Enterprise</p>
+            <p>Donate</p>
+            <p>Spread the word</p>
+            <p>Our Process</p>
+        </div>
+    </div>
+    <div class="col-2 col-md-2">
+        <div class="footer-text-flex">
+            <h4>Features</h4>
+            <p>Design</p>
+            <p>Wireframing</p>
+            <p>Prototyping</p>
+            <p>Collaboration</p>
+            <p>Integrations</p>
+        </div>
+    </div>
+    <div class="col-2 col-md-2">
+        <div class="footer-text-flex">
+            <h4>Support</h4>
+            <p>Help Center</p>
+            <p>Terms of Service</p>
+            <p>Privacy</p>
+            <p>Status</p>
+            <p>Security</p>
+        </div>
+    </div>
+    <div class="col-2 col-md-2">
+        <div class="footer-text-flex">
+            <h4>Company</h4>
+            <p>Blog</p>
+            <p>About Us</p>
+            <p>Jobs</p>
+            <p>Contact Us</p>
+            <p>Careers</p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Footer End -->
+
+
+
+
+{% endblock content %}

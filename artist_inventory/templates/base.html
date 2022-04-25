@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="../static/css/main.css">
+<title>Artist Inventory API</title>
+</head>
+<body>
+
+<body>
+
+    <!-- Nav Bar Start -->
+    <nav class="home">
+        <h1>Famous Artists [ Database ]</h1>
+        <ul id="home_links">
+            <li><a href="{{ url_for('site.home') }}">Home</a></li>
+            <li><a href="{{ url_for('site.profile') }}">Profile</a></li>
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('site.create') }}">Create</a></li>
+            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+            {% else %}
+            <li><a href="{{ url_for('auth.signin') }}">Sign In</a></li>
+            <li id="last_link"><a href="{{ url_for('auth.signup') }}">Sign Up Free!</a></li>
+            {% endif %}
+        </ul>    
+    </nav>
+
+    <!-- Nav Bar End -->
+
+    {% block content %}
+    {% endblock content %}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

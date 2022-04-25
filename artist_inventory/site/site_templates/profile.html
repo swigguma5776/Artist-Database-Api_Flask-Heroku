@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- Header  -->
+<div class="hero-image-p">
+    <div class="hero-text-p">
+        <h2>Welcome to your Artists Database {{ current_user.first_name}} {{ current_user.last_name}}!</h2>
+    </div>
+</div>
+
+<!-- Header End -->
+
+<!-- Profile Details -->
+
+<div class="container" id="profile-details">
+    <h3>Here are your profile details</h3>
+    <ul class="list-group">
+        <li class="list-group-item">First Name: {{ current_user.first_name }} </li>
+        <li class="list-group-item">Last Name: {{ current_user.last_name }} </li>
+        <li class="list-group-item">Email: {{ current_user.email }} </li>
+        <li class="list-group-item">Token: {{ current_user.token }}</li>
+    </ul>
+    <br>
+</div>
+
+<!-- Profile Details End -->
+
+<!-- Add User Created Artist Form -->
+
+<main class="container" id="user-created">
+    <div class="row">
+        <aside class="col-12 col-md-6">
+            <br>
+            <h3>Create Your Own Artist</h3>
+            <a href="{{ url_for('site.create') }}"><button class="btn btn-secondary">Get Creating</button></a>
+            <br>
+            <br>
+            <h3>Here are your Artists</h3>
+        </aside>
+    </div>
+</main>   
+<br>
+<br>                  
+
+<!-- Artist Collection -->
+
+
+{% for artist in artists %}
+
+    <div class="card mb-3" id="card-info" style="max-width: 85%;">
+        
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img src="../../static/images/1-sunflowers-van-goth-david-pyatt.jpeg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8" id="card-text">
+            <div class="card-body">
+            <h5 class="card-title">{{ artist.first_name}} {{ artist.last_name }}</h5>
+            <p class="card-text"><small class="text-muted">Nationality: {{ artist.nationality}}</small></p>
+            <p class="card-text"><small class="text-muted">Art Period: {{ artist.art_period }}</small></p>
+            <p class="card-text"><small class="text-muted">Style: {{ artist.style }}</small></p>
+            <p class="card-text"><small class="text-muted">Most Famous Work: {{ artist.most_famous_work }}</small></p>
+            <p class="card-text"><small class="text-muted">Scandals: {{ artist.scandals }}</small></p>
+            </div>
+        </div>
+        </div>
+    </div>
+  
+{% endfor %}
+<br>
+<br>
+
+
+
+{% endblock content %}

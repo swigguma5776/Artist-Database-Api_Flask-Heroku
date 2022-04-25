@@ -1,0 +1,43 @@
+<!-- Artist Create Form HTML -->
+
+
+
+<form method = "POST">
+    {{artist_form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset id="first-name-field">
+            {{ artist_form.first_name.label }}
+            {{ artist_form.first_name(class = "form-control", placeholder = "Artist First Name") }}
+        </fieldset>
+        <fieldset id="last-name-field">
+            {{ artist_form.last_name.label }}
+            {{ artist_form.last_name(class = "form-control", placeholder = "Artist Last Name") }}
+        </fieldset>
+        <fieldset id="nationality-field">
+            {{ artist_form.nationality.label }}
+            {{ artist_form.nationality(class = "form-control", placeholder = "Artist Nationality") }}
+        </fieldset>
+        <fieldset id="art-period-field">
+            {{ artist_form.art_period.label }}
+            {{ artist_form.art_period(class = "form-control", placeholder = "Artist Art Period") }}
+        </fieldset>
+        <fieldset id="style-field">
+            {{ artist_form.style.label }}
+            {{ artist_form.style(class = "form-control", placeholder = "Artist Style") }}
+        </fieldset>
+        <fieldset id="most-famous-work-field">
+            {{ artist_form.most_famous_work.label }}
+            {{ artist_form.most_famous_work(class = "form-control", placeholder = "Artist Most Famous Work") }}
+        </fieldset>
+        <fieldset id="scandals-field">
+            {{ artist_form.scandals.label }}
+            {{ artist_form.scandals(class = "form-control", placeholder = "Artist Scandals") }}
+        </fieldset>
+
+        <!-- Submit Button Here -->
+        {{ artist_form.submit_button(class = "btn btn-secondary btn-block") }}
+    </div>
+
+</form>
+
+
